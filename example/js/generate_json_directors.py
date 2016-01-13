@@ -27,8 +27,8 @@ for d in data_json:
 	for m in d['movies']:
 		movie_name = m['movie']
 
-		if m['fcover'] != 'NA':
-			m['fcover'] = 'example/js/fcovers/' + director_name + '/' +re.sub('[^A-Za-z0-9]+', '', movie_name) + '.jpg'	
+		if m['fcover'][:4] == 'http':
+			m['fcover'] = 'example/img/fcovers/' + director_name + '/' +re.sub('[^A-Za-z0-9]+', '', movie_name) + '.jpg'	
 		print(m['fcover'])
 	
 

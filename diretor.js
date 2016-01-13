@@ -1,7 +1,7 @@
 var allMovies;
 var director;
 
-$.getJSON("example/js/fcovers/movieDirectors.json", function (data) {
+$.getJSON("example/js/movieDirectors.json", function (data) {
     allMovies = data;
     director = getDirector(getParameterByName('director'));
 
@@ -167,66 +167,66 @@ function getParameterByName(name) {
     return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
 
-function busca(){
-    var qtd;
-    var buscaInputTermos;
-    var nome;
-    var urlFoto;
-    var birthDate;
-    var deathDate;
-    var biografia;
+// function busca(){
+//     var qtd;
+//     var buscaInputTermos;
+//     var nome;
+//     var urlFoto;
+//     var birthDate;
+//     var deathDate;
+//     var biografia;
 
     
 
 
-    // Resgatar valores.
-    busca.prototype.resgatarValores = function(){
-        $('#resultado').html('Carregando dados...');
+//     // Resgatar valores.
+//     busca.prototype.resgatarValores = function(){
+//         $('#resultado').html('Carregando dados...');
 
-        // Estrutura de resultado.
-        $.getJSON('example/datas/informationDirectors.json', function(data){
-            this.qtd = data.directors.length;
-            this.nome = '';
-            this.urlFoto = '';
-            this.birthDate = '';
-            this.deathDate = '';
-            this.biografia = '';
+//         // Estrutura de resultado.
+//         $.getJSON('example/datas/informationDirectors.json', function(data){
+//             this.qtd = data.directors.length;
+//             this.nome = '';
+//             this.urlFoto = '';
+//             this.birthDate = '';
+//             this.deathDate = '';
+//             this.biografia = '';
 
-            buscaInputTermos = getParameterByName('director');
+//             buscaInputTermos = getParameterByName('director');
 
-            for (i = 0; i < this.qtd; i++){
-                if (buscaInputTermos == data.directors[i].FIELD1){
+//             for (i = 0; i < this.qtd; i++){
+//                 if (buscaInputTermos == data.directors[i].FIELD1){
 
-                    this.nome =  data.directors[i].FIELD1 + '<br />';
-                    this.urlFoto = '<img src=' + data.directors[i].FIELD2.trim() + '" class="img-responsive"><br />';
-                    this.birthDate =  data.directors[i].FIELD4 + '<br />';
-
-
-                    if (data.directors[i].FIELD5.trim() == "NA"){
-                        this.deathDate = '---';
-                    }else{
-                        this.deathDate =  data.directors[i].FIELD5.trim() + '<br />';
-                    }
-
-                    this.biografia = data.directors[i].FIELD3 + '<br /><br />';
-
-                }
+//                     this.nome =  data.directors[i].FIELD1 + '<br />';
+//                     this.urlFoto = '<img src=' + data.directors[i].FIELD2.trim() + '" class="img-responsive"><br />';
+//                     this.birthDate =  data.directors[i].FIELD4 + '<br />';
 
 
-            }
+//                     if (data.directors[i].FIELD5.trim() == "NA"){
+//                         this.deathDate = '---';
+//                     }else{
+//                         this.deathDate =  data.directors[i].FIELD5.trim() + '<br />';
+//                     }
 
-            $('#nome').html(this.nome);
-            $('#urlFoto').html(this.urlFoto);
-            $('#birthDate').html(this.birthDate);
-            $('#deathDate').html(this.deathDate);
-            $('#biografia').html(this.biografia);
+//                     this.biografia = data.directors[i].FIELD3 + '<br /><br />';
 
-        });
+//                 }
 
-    }
 
-}
+//             }
 
-// Objeto.
-var obj = new busca();
-obj.resgatarValores();
+//             $('#nome').html(this.nome);
+//             $('#urlFoto').html(this.urlFoto);
+//             $('#birthDate').html(this.birthDate);
+//             $('#deathDate').html(this.deathDate);
+//             $('#biografia').html(this.biografia);
+
+//         });
+
+//     }
+
+// }
+
+// // Objeto.
+// var obj = new busca();
+// obj.resgatarValores();
