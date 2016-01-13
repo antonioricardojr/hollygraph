@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>HollyGraph</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="example/css/bootstrap.min.css" type="text/css">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic'
+          rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="example/font-awesome/css/font-awesome.min.css" type="text/css">
+
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="example/css/animate.min.css" type="text/css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="example/css/creative.css" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tips & Tricks: How to spice up your menu with CSS3"/>
+    <meta name="keywords" content="menu, hover, css3, effect, slide out, image, transition"/>
+    <meta name="author" content="Codrops"/>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="example/css/demo.css"/>
+    <link rel="stylesheet" type="text/css" href="example/css/style.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Hind' rel='stylesheet' type='text/css'/>
+
+    <style>
+
+        .node {
+            cursor: pointer;
+        }
+
+        .node:hover {
+            stroke: #000;
+            stroke-width: 1.5px;
+        }
+
+        .node--leaf {
+            fill: #991824;
+        }
+
+        .label {
+            font: 11px "Hind", Helvetica, Arial, sans-serif;
+            text-anchor: middle;
+            color: #fff;
+            text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+        }
+
+        .label,
+        .node--root,
+        .node--leaf {
+            pointer-events: none;
+        }
+
+    </style>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top">
+
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">HollyGraph</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a class="page-scroll" href="#filmografy">Filmografy</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#analysis">Analysis</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="about_us.html">About</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <div class="row">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <div class="col-xs-push-3 col-xs-6 text-center">
+                    <img src="example/img/hollygraph2.png" class="img-responsive" alt="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <!--<div class="ui-widget">-->
+            <!--<label for="tags">Tags: </label>-->
+            <!--<input id="tags">-->
+            <!--</div>-->
+            <!--row search bar-->
+            <div id="director" class="director" name="director"></div>
+            <div class="row">
+                <div class="col-xs-push-3 col-xs-6 text-center">
+                    <form>
+                        <div class="input-group">
+                            <input id="search" name="search" type="text" class="form-control"
+                                   placeholder="Search for..."/>
+                        <span class="input-group-btn">
+                            <a href="director.html" id="go_link">
+                                <button class="btn btn-default" id="go_button" type="button">Go!</button>
+                            </a>
+                        </span>
+
+                        </div>
+                        <!-- /input-group --></form>
+
+                </div>
+                <!-- /.col-lg-12 -->
+                <!-- /.row search bar-->
+                <br>
+                <br>
+                <!--<a href="#about" class="btn btn-primary btn-xl page-scroll">Find Out More</a>-->
+            </div>
+        </div>
+</header>
+
+<section class="bg-dark" id="filmografy">
+    <div class="container">
+        <div class="row">
+            <div id="filmography" class="col-lg-8 col-lg-offset-2 text-center">
+                <!--<h2 class="section-heading">We've got what you need!</h2>-->
+                <!--<hr class="light">-->
+                <!--<p class="text-faded">Start Bootstrap has everything you need to get your new website up and running in-->
+                <!--no time! All of the templates and themes on Start Bootstrap are open source, free to download, and-->
+                <!--easy to use. No strings attached!</p>-->
+                <!--<a href="#" class="btn btn-default btn-xl">Get Started!</a>-->
+            </div>
+        </div>
+    </div>
+    <div>
+
+    </div>
+    <script src="example/js/d3.min.js"></script>
+    <script src="example/js/filmography.js"></script>
+</section>
+
+
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter">
+            <div class="col-lg-4 col-sm-6">
+                <a href="http://www.imdb.com/name/nm0000217/" class="portfolio-box">
+                    <img src="example/images/APRESENTAÇÃO-06.png" class="img-responsive" alt="">
+
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Martin Scorsese
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="http://www.imdb.com/name/nm0001053/" class="portfolio-box">
+                    <img src="example/images/APRESENTAÇÃO-02.png" class="img-responsive" alt="">
+
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Ethan Coen
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="director.html" class="portfolio-box">
+                    <img src="example/images/APRESENTAÇÃO-03.png" class="img-responsive" alt="">
+
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Steven Spielberg
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="http://www.imdb.com/name/nm0000040/" class="portfolio-box">
+                    <img src="example/images/APRESENTAÇÃO-04.png" class="img-responsive" alt="">
+
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Stanley Kubrick
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="http://www.imdb.com/name/nm0000264/" class="portfolio-box">
+                    <img src="example/images/APRESENTAÇÃO-05.png" class="img-responsive" alt="">
+
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+
+                            <div class="project-name">
+                                Pedro Almodóvar
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="http://www.imdb.com/name/nm0000095/" class="portfolio-box">
+                    <img src="example/images/APRESENTAÇÃO-07.png" class="img-responsive" alt="">
+
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-name">
+                                Wood Allen
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-primary" id="analysis">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2>Top 5 Rising</h2>
+                    <ul class="mh-menu">
+                        <li><a href="#"><span>Top 1</span> <span>W.S. Van Dyke</span></a><img
+                                src="example/images/01 - Rising.jpg" alt="image01" width="220px"/></li>
+                        <li><a href="#"><span>Top 2</span> <span>Çagan Irmak</span></a><img src="example/images/02 - Rising.jpg"
+                                                                                            alt="image02"
+                                                                                            width="220px"/></li>
+                        <li><a href="#"><span>Top 3</span> <span>Thomas Vinterberg</span></a><img
+                                src="example/images/03 - Rising.jpg" alt="image03" width="220px"/></li>
+                        <li><a href="#"><span>Top 4</span> <span>Kenji Misumi</span></a><img
+                                src="example/images/hollygraph-07.png" alt="image04" width="220px"/></li>
+                        <li><a href="#"><span>Top 5</span> <span>Damián Szifrón</span></a><img
+                                src="example/images/05 - Rising.jpg" alt="image04" width="220px"/></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2>Top 5 Downward</h2>
+                    <ul class="mh-menu">
+                        <li><a href="#"><span>Top 1</span> <span>Kátia Lund</span></a><img
+                                src="example/images/01 - Downward.jpg" alt="image01" width="220px"/></li>
+                        <li><a href="#"><span>Top 2</span> <span>Hal Ashby</span></a><img src="example/images/02 - Downward.jpg"
+                                                                                          alt="image02" width="220px"/>
+                        </li>
+                        <li><a href="#"><span>Top 3</span> <span>Frank Darabont</span></a><img
+                                src="example/images/05 - Downward.jpg" alt="image03" width="220px"/></li>
+                        <li><a href="#"><span>Top 4</span> <span>Slobodan Sijan</span></a><img
+                                src="example/images/06 - Downward.jpg" alt="image04" width="220px"/></li>
+                        <li><a href="#"><span>Top 5</span> <span>Preston Sturges</span></a><img
+                                src="example/images/04 - Downward.jpg" alt="image04" width="220px"/></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="container">
+                    <h3>Most Awarded Directors</h3>
+                    <ul class="mh-menu">
+                        <li><a href="#"><span>Top 1</span> <span>Woody Allen</span></a><img src="example/images/Woody Allen.jpg"
+                                                                                            alt="image01"
+                                                                                            width="220px"/></li>
+                        <li><a href="#"><span>Top 2</span> <span>John Huston</span></a><img src="example/images/John Huston.jpg"
+                                                                                            alt="image02"
+                                                                                            width="220px"/></li>
+                        <li><a href="#"><span>Top 3</span> <span>Stanley Kubrick</span></a><img
+                                src="example/images/Stanley Kubrick.jpg" alt="image03" width="220px"/></li>
+                        <li><a href="#"><span>Top 4</span> <span>Ethan Coen</span></a><img src="example/images/Ethan Coen.jpg"
+                                                                                           alt="image04" width="220px"/>
+                        </li>
+                        <li><a href="#"><span>Top 5</span> <span>Martin Scorsese</span></a><img
+                                src="example/images/Martin Scorsese.jpg" alt="image04" width="220px"/></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="container">
+                    <h3>Unluckiest Directors </h3>
+                    <ul class="mh-menu">
+                        <li><a href="#"><span>Top 1</span> <span>Mike Leigh</span></a><img src="example/images/Mike Leigh.jpg"
+                                                                                           alt="image01" width="220px"/>
+                        </li>
+                        <li><a href="#"><span>Top 2</span> <span>Wes Anderson</span></a><img
+                                src="example/images/Wes Anderson.jpg" alt="image02" width="220px"/></li>
+                        <li><a href="#"><span>Top 3</span> <span>Peter Weir</span></a><img src="example/images/Peter Weir.jpg"
+                                                                                           alt="image03" width="220px"/>
+                        </li>
+                        <li><a href="#"><span>Top 4</span> <span>Paul Thomas</span></a><img
+                                src="example/images/Paul Thomas Anderson.jpg" alt="image04" width="220px"/></li>
+                        <li><a href="#"><span>Top 5</span> <span>Jim Sheridan</span></a><img
+                                src="example/images/Jim Sheridan.jpg" alt="image04" width="220px"/></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <br>
+        <hr class="primary">
+        <br>
+
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2>Most Awarded Actors</h2>
+                    <ul class="mh-menu">
+                        <li><a href="#"><span>Top 1</span> <span>Woody Allen</span></a><img src="example/images/Woody Allen.jpg"
+                                                                                            alt="image01"
+                                                                                            width="220px"/></li>
+                        <li><a href="#"><span>Top 2</span> <span>Jack Nicholson</span></a><img
+                                src="example/images/Jack Nicholson.jpg" alt="image02" width="220px"/></li>
+                        <li><a href="#"><span>Top 3</span> <span>Al Pacino</span></a><img src="example/images/Al Pacino.jpg"
+                                                                                          alt="image03" width="220px"/>
+                        </li>
+                        <li><a href="#"><span>Top 4</span> <span>Marlon Brando</span></a><img
+                                src="example/images/Marlon Brando.jpg" alt="image04" width="220px"/></li>
+                        <li><a href="#"><span>Top 5</span> <span>George Clooney</span></a><img
+                                src="example/images/George Clooney.jpg" alt="image04" width="220px"/></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div class="container">
+                    <h2>Unluckiest Actors</h2>
+                    <ul class="mh-menu">
+                        <li><a href="#"><span>Top 1</span> <span>Leonardo DiCaprio</span></a><img
+                                src="example/images/Leonardo DiCaprio.jpg" alt="image01" width="220px"/></li>
+                        <li><a href="#"><span>Top 2</span> <span>Albert Finney</span></a><img
+                                src="example/images/Albert Finney.jpg" alt="image02" width="220px"/></li>
+                        <li><a href="#"><span>Top 3</span> <span>Ed Harris</span></a><img src="example/images/Ed Harris.jpg"
+                                                                                          alt="image03" width="220px"/>
+                        </li>
+                        <li><a href="#"><span>Top 4</span> <span>Ethan Hawke</span></a><img src="example/images/Ethan Hawke.jpg"
+                                                                                            alt="image04"
+                                                                                            width="220px"/></li>
+                        <li><a href="#"><span>Top 5</span> <span>Johnny Depp</span></a><img src="example/images/Johnny Depp.jpg"
+                                                                                            alt="image04"
+                                                                                            width="220px"/></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div>
+
+    </div>
+
+</section>
+
+
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="example/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="example/js/jquery.easing.min.js"></script>
+<script src="example/js/jquery.fittext.js"></script>
+<script src="example/js/wow.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="example/js/creative.js"></script>
+
+<script type="text/javascript" src="search.js"></script>
+
+</body>
+
+</html>
